@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Book a model</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,14 +12,44 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+                           <!-- Sign up/ Sign In Container -->
+
+     <div class="signup-signin">
+
+       <div class="dropdown">
+         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Sign Up
+         </button>
+         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           <form id="sign-up">
+             <fieldset>
+               <legend>Sign up!</legend>
+               <input type="text" id="sign-up-email" name="credentials[email]" placeholder="Email">
+               <input type="text" id="sign-up-password" name="credentials[password]" placeholder="Password">
+               <input type="text" id="sign-up-password-confirmation" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+               <input type="submit" name="submit" value="Sign up!">
+             </fieldset>
+             </form>
+         </div>
+       </div>
+
+       <div class="dropdown">
+         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Sign In
+         </button>
+         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           <form id="sign-in">
+             <fieldset>
+               <legend>Sign in!</legend>
+               <input type="text" id="sign-in-email" name="credentials[email]" placeholder="Email">
+               <input type="text" id="sign-in-password" name="credentials[password]" placeholder="Password">
+               <input type="submit" name="submit" value="Sign in!">
+             </fieldset>
+             </form>
+         </div>
+       </div>
+     </div>
+
     </body>
 </html>
