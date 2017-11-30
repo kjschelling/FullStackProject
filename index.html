@@ -13,13 +13,12 @@
     </head>
     <body class="container-fluid">
 
-                           <!-- Sign up/ Sign In Container -->
+                           <!-- Auth Container -->
 
-     <div class="signup-signin">
-       <p id="up-in-message"></p>
-       <div class="dropdown">
+     <div class="auth-container">
+       <div class="dropdown sign-up">
          <button class="btn btn-secondary dropdown-toggle up-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Sign Up
+           sign up
          </button>
          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
            <form id="sign-up">
@@ -33,9 +32,9 @@
          </div>
        </div>
 
-       <div class="dropdown">
+       <div class="dropdown sign-in">
          <button class="btn btn-secondary dropdown-toggle in-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Sign In
+           sign in
          </button>
          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
            <form id="sign-in">
@@ -47,8 +46,55 @@
              </form>
          </div>
        </div>
-     </div>
-  <div>
+
+       <div class="dropdown change-password">
+         <button class="btn btn-secondary dropdown-toggle change-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           change password
+         </button>
+         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           <form id="change-password">
+             <fieldset>
+               <input type="text" id="old-password" name="credentials[password]" placeholder="Old">
+               <input type="text" id="new-password" name="credentials[password]" placeholder="New">
+               <input type="submit" name="submit" value="Change!">
+             </fieldset>
+             </form>
+         </div>
+       </div>
+
+       <div class="dropdown sign-out">
+         <button class="btn btn-secondary dropdown-toggle out-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           sign out
+         </button>
+         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           <form id="sign-out">
+             <fieldset>
+               <input type="submit" name="submit" value="Sign Out!">
+             </fieldset>
+             </form>
+         </div>
+       </div>
+       <p id='auth-message'></p>
+ </div>
+
+ <p id="mannequin-message"></p>
+  <div class="mannequins">
+        <form id="create-mannequin">
+          <fieldset>
+            <input type="text" id="given_name"  name="mannequin[given_name]" placeholder="First">
+            <input type="text" id="surname" name="mannequin[surname]" placeholder="Last">
+            <input type="text" id="measurements" name="mannequin[measurements]" placeholder="Measurements">
+            <input type="text" id="eye_color" name="mannequin[eye_color]" placeholder="Eye Color">
+            <input type="text" id="hair_color" name="mannequin[hair_color]" placeholder="Hair Color">
+            <input type="text" id="hair_length" name="mannequin[hair_length]" placeholder="Hair Length">
+            <input type="text" id="gender" name="mannequin[gender]" placeholder="Gender">
+            <input type="text" id="height" name="mannequin[height]" placeholder="Height">
+            <input type="text" id="weight" name="mannequin[weight]" placeholder="Weight">
+            <input type="submit" name="submit" value="Create">
+          </fieldset>
+          </form>
+      <button id="show">Show Models</button>
+      <div id="show-models"></div>
   </div>
 
 
