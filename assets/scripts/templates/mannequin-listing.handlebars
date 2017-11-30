@@ -1,0 +1,19 @@
+{{#each mannequins as |mannequin|}}
+
+
+   <!-- Developers, why are we using data-id and not just id? -->
+   <ul data-id="{{mannequin.id}}">
+     <li> <small>ID: {{mannequin.id}}</small></li>
+     <li> <small>First: {{mannequin.given_name}}</small></li>
+     <li> <small>Last: {{mannequin.surname}}</small></li>
+     <li> <small>Measurements: {{mannequin.measurements}}</small></li>
+     <li> <small>Eye Color: {{mannequin.eye_color}}</small></li>
+     <li> <small>Hair Color: {{mannequin.hair_color}}</small></li>
+     <li> <small>Hair Length: {{mannequin.hair_length}}</small></li>
+     <li> <small>Gender: {{mannequin.gender}}</small></li>
+     <li> <small>Height: {{mannequin.height}}</small></li>
+     <li> <small>Height: {{mannequin.weight}}</small></li>
+      <li><button type="button" name="button">Remove</button></li>
+   </ul>
+
+{{/each}}
