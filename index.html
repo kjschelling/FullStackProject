@@ -16,15 +16,14 @@
                            <!-- Sign up/ Sign In Container -->
 
      <div class="signup-signin">
-
+       <p id="up-in-message"></p>
        <div class="dropdown">
-         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <button class="btn btn-secondary dropdown-toggle up-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            Sign Up
          </button>
          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
            <form id="sign-up">
              <fieldset>
-               <legend>Sign up!</legend>
                <input type="text" id="sign-up-email" name="credentials[email]" placeholder="Email">
                <input type="text" id="sign-up-password" name="credentials[password]" placeholder="Password">
                <input type="text" id="sign-up-password-confirmation" name="credentials[password_confirmation]" placeholder="Password Confirmation">
@@ -35,13 +34,12 @@
        </div>
 
        <div class="dropdown">
-         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <button class="btn btn-secondary dropdown-toggle in-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            Sign In
          </button>
          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
            <form id="sign-in">
              <fieldset>
-               <legend>Sign in!</legend>
                <input type="text" id="sign-in-email" name="credentials[email]" placeholder="Email">
                <input type="text" id="sign-in-password" name="credentials[password]" placeholder="Password">
                <input type="submit" name="submit" value="Sign in!">
@@ -50,6 +48,9 @@
          </div>
        </div>
      </div>
+  <div>
+  </div>
+
 
     </body>
 </html>
