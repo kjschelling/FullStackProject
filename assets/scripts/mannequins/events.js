@@ -44,8 +44,6 @@ const addHandlers = function () {
   $('#delete-mannequin').on('submit', onDelete)
 }
 
-
-
 module.exports = {
   addHandlers
 }
