@@ -17,7 +17,7 @@
 
      <div class="auth-container">
        <div class="dropdown sign-up">
-         <button class="btn btn-secondary dropdown-toggle up-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            sign up
          </button>
          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -54,8 +54,8 @@
          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
            <form id="change-password">
              <fieldset>
-               <input type="text" id="old-password" name="credentials[password]" placeholder="Old">
-               <input type="text" id="new-password" name="credentials[password]" placeholder="New">
+               <input type="text" id="old-password" name="passwords[old]" placeholder="Old">
+               <input type="text" id="new-password" name="passwords[new]" placeholder="New">
                <input type="submit" name="submit" value="Change!">
              </fieldset>
              </form>
@@ -101,7 +101,7 @@
       <p> Update Model </p>
       <form id="update-mannequin">
         <fieldset>
-          <input type="text" name="mannequin[id]" placeholder="ID">
+          <input type="text"  name="mannequin[id]" placeholder="ID">
           <input type="text"  name="mannequin[given_name]" placeholder="First">
           <input type="text"  name="mannequin[surname]" placeholder="Last">
           <input type="text"  name="mannequin[measurements]" placeholder="Measurements">
@@ -111,7 +111,7 @@
           <input type="text"  name="mannequin[gender]" placeholder="Gender">
           <input type="text"  name="mannequin[height]" placeholder="Height">
           <input type="text"  name="mannequin[weight]" placeholder="Weight">
-          <input type="submit" name="submit" value="Update">
+          <input type="submit"  name="submit" value="Update">
         </fieldset>
         </form>
       <br>

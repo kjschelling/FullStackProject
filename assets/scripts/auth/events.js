@@ -7,7 +7,7 @@ const authApi = require('./api')
 // default page
 $('.change-password').hide()
 $('.sign-out').hide()
-
+$('.mannequins').hide()
 /* GAME AUTHORIZATION FUNCTIONS */
 
 // on sign up
@@ -31,6 +31,7 @@ const onSignIn = function (event) {
 // on change password
 const onChangePassword = function (event) {
   const data = getFormFields(this)
+  console.log(data)
   event.preventDefault()
   authApi.changePassword(data)
     .then(authUI.changePasswordSuccess)

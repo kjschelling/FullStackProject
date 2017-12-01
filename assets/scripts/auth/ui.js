@@ -24,9 +24,11 @@ const signInSuccess = function (data) {
   $('.change-password').show()
   $('.sign-out').show()
   $('.sign-in').hide()
+  $('.sign-up').hide()
   $('.up-button').hide()
   $('#sign-in-email').val('')
   $('#sign-in-password').val('')
+  $('.mannequins').show()
 }
 
 // sign in fail
@@ -47,10 +49,11 @@ const changePasswordFailure = function () {
 // sign out success
 const signOutSuccess = function () {
   store.user = null
-  $('#sign-up').show()
-  $('#sign-in').show()
-  $('#change-password').hide()
-  $('#sign-out').hide()
+  $('.sign-up').show()
+  $('.sign-in').show()
+  $('.change-password').hide()
+  $('.sign-out').hide()
+  $('.mannequins').hide()
 }
 
 // sign out fail
