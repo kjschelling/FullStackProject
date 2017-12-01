@@ -17,13 +17,34 @@ const onShow = function (event) {
   event.preventDefault()
   mannApi.showModels(data)
     .then(mannUI.showSuccess)
-    .catch(mannUI.showFailureeye_color)
+    .catch(mannUI.showFailure)
+}
+
+const onUpdate = function (event) {
+  const data = getFormFields(this)
+  console.log(data)
+  event.preventDefault()
+  mannApi.updateModel(data)
+    .then(mannUI.updateSuccess)
+    .catch(mannUI.updateFailure)
+}
+
+const onDelete = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  mannApi.deleteModel(data)
+    .then(mannUI.deleteSuccess)
+    .catch(mannUI.deleteFailure)
 }
 
 const addHandlers = function () {
   $('#create-mannequin').on('submit', onCreate)
   $('#show').on('click', onShow)
+  $('#update-mannequin').on('submit', onUpdate)
+  $('#delete-mannequin').on('submit', onDelete)
 }
+
+
 
 module.exports = {
   addHandlers

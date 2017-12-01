@@ -24,7 +24,31 @@ const showModels = function (data) {
   })
 }
 
+const updateModel = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/mannequins/' + data.mannequin.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const deleteModel = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/mannequins/' + data.mannequin.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createModel,
-  showModels
+  showModels,
+  updateModel,
+  deleteModel
 }

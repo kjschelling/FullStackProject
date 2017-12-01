@@ -79,24 +79,49 @@
 
  <p id="mannequin-message"></p>
   <div class="mannequins">
+    <p> Create New Model </p>
         <form id="create-mannequin">
           <fieldset>
-            <input type="text" id="given_name"  name="mannequin[given_name]" placeholder="First">
-            <input type="text" id="surname" name="mannequin[surname]" placeholder="Last">
-            <input type="text" id="measurements" name="mannequin[measurements]" placeholder="Measurements">
-            <input type="text" id="eye_color" name="mannequin[eye_color]" placeholder="Eye Color">
-            <input type="text" id="hair_color" name="mannequin[hair_color]" placeholder="Hair Color">
-            <input type="text" id="hair_length" name="mannequin[hair_length]" placeholder="Hair Length">
-            <input type="text" id="gender" name="mannequin[gender]" placeholder="Gender">
-            <input type="text" id="height" name="mannequin[height]" placeholder="Height">
-            <input type="text" id="weight" name="mannequin[weight]" placeholder="Weight">
+            <input type="text" name="mannequin[given_name]" placeholder="First">
+            <input type="text" name="mannequin[surname]" placeholder="Last">
+            <input type="text" name="mannequin[measurements]" placeholder="Measurements">
+            <input type="text" name="mannequin[eye_color]" placeholder="Eye Color">
+            <input type="text" name="mannequin[hair_color]" placeholder="Hair Color">
+            <input type="text" name="mannequin[hair_length]" placeholder="Hair Length">
+            <input type="text" name="mannequin[gender]" placeholder="Gender">
+            <input type="text" name="mannequin[height]" placeholder="Height">
+            <input type="text"  name="mannequin[weight]" placeholder="Weight">
             <input type="submit" name="submit" value="Create">
           </fieldset>
           </form>
+          <br>
       <button id="show">Show Models</button>
       <div id="show-models"></div>
+      <br>
+      <p> Update Model </p>
+      <form id="update-mannequin">
+        <fieldset>
+          <input type="text" name="mannequin[id]" placeholder="ID">
+          <input type="text"  name="mannequin[given_name]" placeholder="First">
+          <input type="text"  name="mannequin[surname]" placeholder="Last">
+          <input type="text"  name="mannequin[measurements]" placeholder="Measurements">
+          <input type="text"  name="mannequin[eye_color]" placeholder="Eye Color">
+          <input type="text"  name="mannequin[hair_color]" placeholder="Hair Color">
+          <input type="text"  name="mannequin[hair_length]" placeholder="Hair Length">
+          <input type="text"  name="mannequin[gender]" placeholder="Gender">
+          <input type="text"  name="mannequin[height]" placeholder="Height">
+          <input type="text"  name="mannequin[weight]" placeholder="Weight">
+          <input type="submit" name="submit" value="Update">
+        </fieldset>
+        </form>
+      <br>
+      <form id="delete-mannequin">
+        <fieldset>
+          <input type="text" id="model-id"  name="mannequin[id]" placeholder="ID">
+          <input type="submit" class="delete" name="submit" value="Delete">
+        </fieldset>
+      </form>
   </div>
-
 
     </body>
 </html>

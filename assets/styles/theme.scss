@@ -4,17 +4,16 @@
   font-family: Courier;
 }
 
-.sign-in {
-  display: inline-flex;
+#create-mannequin, #delete-mannequin, #show, #update-mannequin {
   font-family: Courier;
 }
 
-.sign-up {
-  display: inline-flex;
+p {
   font-family: Courier;
+  font-weight: bold;
 }
 
-.sign-out {
+.sign-in, .sign-up, .sign-out  {
   display: inline-flex;
   font-family: Courier;
 }
