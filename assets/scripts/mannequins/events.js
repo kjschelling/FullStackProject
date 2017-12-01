@@ -13,6 +13,7 @@ const onCreate = function (event) {
 }
 
 const onShow = function (event) {
+  $('#show-models').empty()
   const data = getFormFields(this)
   event.preventDefault()
   mannApi.showModels(data)
@@ -37,11 +38,16 @@ const onDelete = function (event) {
     .catch(mannUI.deleteFailure)
 }
 
+const onClear = function () {
+  $('#show-models').empty()
+}
+
 const addHandlers = function () {
   $('#create-mannequin').on('submit', onCreate)
   $('#show').on('click', onShow)
   $('#update-mannequin').on('submit', onUpdate)
   $('#delete-mannequin').on('submit', onDelete)
+  $('#clear').on('click', onClear)
 }
 
 module.exports = {
