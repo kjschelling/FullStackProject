@@ -5,7 +5,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const onCreate = function (event) {
   const data = getFormFields(this)
-  console.log(data)
+  // console.log(data)
   event.preventDefault()
   mannApi.createModel(data)
     .then(mannUI.createSuccess)
@@ -23,7 +23,7 @@ const onShow = function (event) {
 
 const onUpdate = function (event) {
   const data = getFormFields(this)
-  console.log(data)
+  // console.log(data)
   event.preventDefault()
   mannApi.updateModel(data)
     .then(mannUI.updateSuccess)
@@ -41,6 +41,15 @@ const onDelete = function (event) {
 const onClear = function () {
   $('#show-models').empty()
 }
+
+// const checkForEmpty = function () {
+//   const elements = $('input')
+//   for (let i = 0; i < elements.length; i++) {
+//     if (elements[i].value === '') {
+//       $('#update-btn').disable()
+//     }
+//   }
+// }
 
 const addHandlers = function () {
   $('#create-mannequin').on('submit', onCreate)

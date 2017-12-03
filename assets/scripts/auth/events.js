@@ -31,7 +31,7 @@ const onSignIn = function (event) {
 // on change password
 const onChangePassword = function (event) {
   const data = getFormFields(this)
-  console.log(data)
+  // console.log(data)
   event.preventDefault()
   authApi.changePassword(data)
     .then(authUI.changePasswordSuccess)
