@@ -5,7 +5,7 @@ const store = require('../store')
 // sign up  success
 const signUpSuccess = function () {
   // console.log(data)
-  $('#auth-message').text('Signed up successfully!').hide(3000)
+  $('#auth-message').text('Signed up successfully! Please sign in').hide(3000)
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
   $('#sign-up-password-confirmation').val('')
@@ -14,6 +14,9 @@ const signUpSuccess = function () {
 // sign up fail
 const signUpFailure = function () {
   $('#auth-message').text('Error on sign up')
+  $('#sign-up-email').val('')
+  $('#sign-up-password').val('')
+  $('#sign-up-password-confirmation').val('')
 }
 
 // sign in success
@@ -34,6 +37,8 @@ const signInSuccess = function (data) {
 // sign in fail
 const signInFailure = function () {
   $('#auth-message').text('Error on sign in').hide(3000)
+  $('#sign-in-email').val('')
+  $('#sign-in-password').val('')
 }
 
 // change password success
@@ -45,10 +50,13 @@ const changePasswordSuccess = function () {
 // Change password fail
 const changePasswordFailure = function () {
   $('#auth-message').text('Change not made')
+  $('#new-password').val('')
+  $('#old-password').val('')
 }
 // sign out success
 const signOutSuccess = function () {
   store.user = null
+  $('#auth-message').text('Signed out!').hide(3000)
   $('.sign-up').show()
   $('.sign-in').show()
   $('.change-password').hide()

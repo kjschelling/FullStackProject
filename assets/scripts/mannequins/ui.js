@@ -21,6 +21,15 @@ const createSuccess = function () {
 const createFailure = function () {
   // console.log(error)
   $('#mannequin-message').text('Please fill all forms before submitting!').hide(3000)
+  $('#first').val('')
+  $('#last').val('')
+  $('#measurements').val('')
+  $('#eye').val('')
+  $('#hair').val('')
+  $('#length').val('')
+  $('#gender').val('')
+  $('#height').val('')
+  $('#weight').val('')
 }
 
 // show success
@@ -28,12 +37,13 @@ const showSuccess = function (data) {
   // console.log(data)
   const showModelsHtml = showModelsTemplate({ mannequins: data.mannequins })
   $('#show-models').append(showModelsHtml)
+  $('#mannequin-message').text('List of models!')
 }
 
 // show fail
 const showFailure = function () {
   // console.log(error)
-  $('#mannequin-message').text('Error displaying')
+  $('#mannequin-message').text('Error displaying models')
 }
 
 // update success
@@ -55,6 +65,15 @@ const updateSuccess = function () {
 const updateFailure = function () {
   // console.log(error)
   $('#mannequin-message').text('Please fill all forms before submitting!').hide(3000)
+  $('#first').val('')
+  $('#last').val('')
+  $('#measurements').val('')
+  $('#eye').val('')
+  $('#hair').val('')
+  $('#length').val('')
+  $('#gender').val('')
+  $('#height').val('')
+  $('#weight').val('')
 }
 
 // delete success
