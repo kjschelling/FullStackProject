@@ -50,30 +50,30 @@ const showFailure = function () {
 const updateSuccess = function () {
   // console.log(data)
   $('#mannequin-message').text('Model Updated!').hide(3000)
-  $('#first').val('')
-  $('#last').val('')
-  $('#measurements').val('')
-  $('#eye').val('')
-  $('#hair').val('')
-  $('#length').val('')
-  $('#gender').val('')
-  $('#height').val('')
-  $('#weight').val('')
+  $('#first-u').val('')
+  $('#last-u').val('')
+  $('#measurements-u').val('')
+  $('#eye-u').val('')
+  $('#hair-u').val('')
+  $('#length-u').val('')
+  $('#gender-u').val('')
+  $('#height-u').val('')
+  $('#weight-u').val('')
 }
 
 // update fail
 const updateFailure = function () {
   // console.log(error)
   $('#mannequin-message').text('Please fill all forms before submitting!').hide(3000)
-  $('#first').val('')
-  $('#last').val('')
-  $('#measurements').val('')
-  $('#eye').val('')
-  $('#hair').val('')
-  $('#length').val('')
-  $('#gender').val('')
-  $('#height').val('')
-  $('#weight').val('')
+  $('#first-u').val('')
+  $('#last-u').val('')
+  $('#measurements-u').val('')
+  $('#eye-u').val('')
+  $('#hair-u').val('')
+  $('#length-u').val('')
+  $('#gender-u').val('')
+  $('#height-u').val('')
+  $('#weight-u').val('')
 }
 
 // delete success
