@@ -40,6 +40,7 @@ const onDelete = function (event) {
 
 const onClear = function () {
   $('#show-models').empty()
+  $('#clear').hide()
 }
 
 // const checkForEmpty = function () {
