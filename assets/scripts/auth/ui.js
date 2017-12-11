@@ -1,6 +1,8 @@
 'use strict'
 
 const store = require('../store')
+const mannEvents = require('../mannequins/events.js')
+// const mannUI = require('../mannequins/ui.js')
 
 // all messages need to start with .show() before .hide(3000)
 
@@ -35,6 +37,10 @@ const signUpFailure = function () {
 // sign in success
 const signInSuccess = function (data) {
   store.user = data.user
+  mannEvents.onShow()
+  // mannApi.showModels()
+  //   .then(mannUI.showSuccess)
+  //   .catch(mannUI.showFailure)
   // console.log(store.user)
   $('#auth-message').text('Signed in successfully!').show().hide(3000)
   $('.change-password').show()

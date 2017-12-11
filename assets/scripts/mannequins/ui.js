@@ -25,19 +25,21 @@ const createSuccess = function () {
   // console.log(data)
   $('#mannequin-message').text('Model Created!').show().hide(3000)
   clearForms()
-  $('#show').show()
-  $('')
+  $('#update-mannequin').show()
+  $('#delete-mannequin').show()
 }
 
 // create fail
-const createFailure = function () {
-  // console.log(error)
+const createFailure = function (error) {
+  console.log(error)
   $('#mannequin-message').text('Please fill all forms before submitting!').show().hide(3000)
   clearForms()
 }
 
 // show success
 const showSuccess = function (data) {
+  console.log('Within show success', data)
+  // this function
   const showModelsHtml = showModelsTemplate({ mannequins: data.mannequins })
   if (data.mannequins.length !== 0) {
     $('#mannequin-message').text('List of models!').show().hide(3000)
@@ -48,8 +50,8 @@ const showSuccess = function (data) {
 }
 
 // show fail
-const showFailure = function () {
-  // console.log(error)
+const showFailure = function (error) {
+  console.log(error)
   $('#mannequin-message').text('Error displaying models').show().hide(3000)
 }
 
@@ -61,8 +63,8 @@ const updateSuccess = function () {
 }
 
 // update fail
-const updateFailure = function () {
-  // console.log(error)
+const updateFailure = function (error) {
+  console.log(error)
   $('#mannequin-message').text('Please fill all forms before submitting!').show().hide(3000)
   clearForms()
 }

@@ -12,11 +12,12 @@ const onCreate = function (event) {
     .catch(mannUI.createFailure)
 }
 
-const onShow = function (event) {
+const onShow = function () {
   $('#show-models').empty()
-  const data = getFormFields(this)
-  event.preventDefault()
-  mannApi.showModels(data)
+  // const data = getFormFields(this)
+  // event.preventDefault()
+  // console.log('The data is', data)
+  mannApi.showModels()
     .then(mannUI.showSuccess)
     .catch(mannUI.showFailure)
 }
@@ -51,5 +52,6 @@ const addHandlers = function () {
 
 module.exports = {
   addHandlers,
-  onClear
+  onClear,
+  onShow
 }
