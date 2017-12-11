@@ -40,26 +40,16 @@ const onDelete = function (event) {
 
 const onClear = function () {
   $('#show-models').empty()
-  $('#clear').hide()
 }
-
-// const checkForEmpty = function () {
-//   const elements = $('input')
-//   for (let i = 0; i < elements.length; i++) {
-//     if (elements[i].value === '') {
-//       $('#update-btn').disable()
-//     }
-//   }
-// }
 
 const addHandlers = function () {
   $('#create-mannequin').on('submit', onCreate)
   $('#show').on('click', onShow)
   $('#update-mannequin').on('submit', onUpdate)
   $('#delete-mannequin').on('submit', onDelete)
-  $('#clear').on('click', onClear)
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onClear
 }

@@ -1,7 +1,7 @@
 'use strict'
 
 const showModelsTemplate = require('../templates/mannequin-listing.handlebars')
-
+const mannEvents = require('./events')
 // clear form function
 const clearForms = function () {
   $('.model-id').val('')
@@ -26,7 +26,7 @@ const createSuccess = function () {
   $('#mannequin-message').text('Model Created!').show().hide(3000)
   clearForms()
   $('#show').show()
-  $('#clear').show()
+  $('')
 }
 
 // create fail
@@ -40,7 +40,6 @@ const createFailure = function () {
 const showSuccess = function (data) {
   const showModelsHtml = showModelsTemplate({ mannequins: data.mannequins })
   if (data.mannequins.length !== 0) {
-    $('clear').show()
     $('#mannequin-message').text('List of models!').show().hide(3000)
   } else if (data.mannequins.length === 0) {
     $('#mannequin-message').text('Create a model!').show().hide(3000)
@@ -80,6 +79,7 @@ const deleteFailure = function () {
   // console.log(error)
   $('#mannequin-message').text('Model not deleted').show().hide(3000)
   clearDelete()
+  mannEvents.onClear()
 }
 
 module.exports = {
