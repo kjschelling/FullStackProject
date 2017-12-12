@@ -8,6 +8,8 @@ const authApi = require('./api')
 $('.change-password').hide()
 $('.sign-out').hide()
 $('.mannequins').hide()
+$('#update-mannequin').hide()
+$('#delete-mannequin').hide()
 /* GAME AUTHORIZATION FUNCTIONS */
 
 // on sign up

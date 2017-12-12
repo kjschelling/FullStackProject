@@ -1,91 +1,104 @@
 'use strict'
-
+const mannAPI = require('./api')
 const showModelsTemplate = require('../templates/mannequin-listing.handlebars')
+// clear form function
+const clearForms = function () {
+  $('.model-id').val('')
+  $('.first').val('')
+  $('.last').val('')
+  $('.measurements').val('')
+  $('.eye').val('')
+  $('.hair').val('')
+  $('.length').val('')
+  $('.gender').val('')
+  $('.height').val('')
+  $('.weight').val('')
+}
+
+const clearDelete = function () {
+  $('#delete-id').val('')
+}
 
 //  create success
 const createSuccess = function () {
   // console.log(data)
-  $('#mannequin-message').text('Model Created!').hide(3000)
-  $('#first').val('')
-  $('#last').val('')
-  $('#measurements').val('')
-  $('#eye').val('')
-  $('#hair').val('')
-  $('#length').val('')
-  $('#gender').val('')
-  $('#height').val('')
-  $('#weight').val('')
+  $('#show-models').empty()
+  mannAPI.showModels()
+    .then(showSuccess)
+    .catch(showFailure)
+  $('#mannequin-message').text('Model Created!').show().hide(3000)
+  clearForms()
+  // $('#update-mannequin').show()
+  // $('#delete-mannequin').show()
 }
 
 // create fail
-const createFailure = function () {
-  // console.log(error)
-  $('#mannequin-message').text('Please fill all forms before submitting!').hide(3000)
-  $('#first').val('')
-  $('#last').val('')
-  $('#measurements').val('')
-  $('#eye').val('')
-  $('#hair').val('')
-  $('#length').val('')
-  $('#gender').val('')
-  $('#height').val('')
-  $('#weight').val('')
+const createFailure = function (error) {
+  console.log(error)
+  $('#mannequin-message').text('Please fill all forms before submitting!').show().hide(3000)
+  clearForms()
 }
 
 // show success
 const showSuccess = function (data) {
-  // console.log(data)
+  console.log('Within show success', data)
+  // this function
   const showModelsHtml = showModelsTemplate({ mannequins: data.mannequins })
+  if (data.mannequins.length !== 0) {
+    $('#mannequin-message').text('List of models!').show().hide(3000)
+    $('#update-mannequin').show()
+    $('#delete-mannequin').show()
+  } else {
+    $('#mannequin-message').text('Create a model!').show().hide(3000)
+    $('#update-mannequin').hide()
+    $('#delete-mannequin').hide()
+  }
   $('#show-models').append(showModelsHtml)
-  $('#mannequin-message').text('List of models!')
 }
 
 // show fail
-const showFailure = function () {
-  // console.log(error)
-  $('#mannequin-message').text('Error displaying models')
+const showFailure = function (error) {
+  console.log(error)
+  $('#mannequin-message').text('Error displaying models').show().hide(3000)
 }
 
 // update success
 const updateSuccess = function () {
   // console.log(data)
-  $('#mannequin-message').text('Model Updated!').hide(3000)
-  $('#first-u').val('')
-  $('#last-u').val('')
-  $('#measurements-u').val('')
-  $('#eye-u').val('')
-  $('#hair-u').val('')
-  $('#length-u').val('')
-  $('#gender-u').val('')
-  $('#height-u').val('')
-  $('#weight-u').val('')
+  $('#show-models').empty()
+  mannAPI.showModels()
+    .then(showSuccess)
+    .catch(showFailure)
+  $('#mannequin-message').text('Model Updated!').show().hide(3000)
+  clearForms()
 }
 
 // update fail
-const updateFailure = function () {
-  // console.log(error)
-  $('#mannequin-message').text('Please fill all forms before submitting!').hide(3000)
-  $('#first-u').val('')
-  $('#last-u').val('')
-  $('#measurements-u').val('')
-  $('#eye-u').val('')
-  $('#hair-u').val('')
-  $('#length-u').val('')
-  $('#gender-u').val('')
-  $('#height-u').val('')
-  $('#weight-u').val('')
+const updateFailure = function (error) {
+  console.log(error)
+  $('#mannequin-message').text('Please fill all forms before submitting!').show().hide(3000)
+  clearForms()
 }
 
 // delete success
 const deleteSuccess = function () {
-  // console.log(data)
-  $('#mannequin-message').text('Model Deleted!').hide(3000)
+debugger
+$('#show-models').empty()
+// const data = getFormFields(this)
+// event.preventDefault()
+// console.log('The data is', data)
+mannAPI.showModels()
+  .then(showSuccess)
+  .catch(showFailure)
+  $('#mannequin-message').text('Model Deleted!').show().hide(3000)
+  clearDelete()
 }
 
 //  delete fail
 const deleteFailure = function () {
   // console.log(error)
-  $('#mannequin-message').text('Model not deleted').hide(3000)
+  $('#mannequin-message').text('Model not deleted').show().hide(3000)
+  clearDelete()
 }
 
 module.exports = {

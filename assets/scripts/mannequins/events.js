@@ -12,11 +12,12 @@ const onCreate = function (event) {
     .catch(mannUI.createFailure)
 }
 
-const onShow = function (event) {
+const onShow = function () {
   $('#show-models').empty()
-  const data = getFormFields(this)
-  event.preventDefault()
-  mannApi.showModels(data)
+  // const data = getFormFields(this)
+  // event.preventDefault()
+  // console.log('The data is', data)
+  mannApi.showModels()
     .then(mannUI.showSuccess)
     .catch(mannUI.showFailure)
 }
@@ -38,27 +39,14 @@ const onDelete = function (event) {
     .catch(mannUI.deleteFailure)
 }
 
-const onClear = function () {
-  $('#show-models').empty()
-}
-
-// const checkForEmpty = function () {
-//   const elements = $('input')
-//   for (let i = 0; i < elements.length; i++) {
-//     if (elements[i].value === '') {
-//       $('#update-btn').disable()
-//     }
-//   }
-// }
-
 const addHandlers = function () {
   $('#create-mannequin').on('submit', onCreate)
   $('#show').on('click', onShow)
   $('#update-mannequin').on('submit', onUpdate)
   $('#delete-mannequin').on('submit', onDelete)
-  $('#clear').on('click', onClear)
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onShow
 }

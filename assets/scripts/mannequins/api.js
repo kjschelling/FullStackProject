@@ -3,6 +3,7 @@ const config = require('../config')
 const store = require('../store')
 
 const createModel = function (data) {
+  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/mannequins',
     method: 'POST',
@@ -13,14 +14,13 @@ const createModel = function (data) {
   })
 }
 
-const showModels = function (data) {
+const showModels = function () {
   return $.ajax({
     url: config.apiOrigin + '/mannequins',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data
+    }
   })
 }
 
