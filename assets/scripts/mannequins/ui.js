@@ -1,7 +1,6 @@
 'use strict'
-
+const mannAPI = require('./api')
 const showModelsTemplate = require('../templates/mannequin-listing.handlebars')
-const mannEvents = require('./events')
 // clear form function
 const clearForms = function () {
   $('.model-id').val('')
@@ -23,10 +22,14 @@ const clearDelete = function () {
 //  create success
 const createSuccess = function () {
   // console.log(data)
+  $('#show-models').empty()
+  mannAPI.showModels()
+    .then(showSuccess)
+    .catch(showFailure)
   $('#mannequin-message').text('Model Created!').show().hide(3000)
   clearForms()
-  $('#update-mannequin').show()
-  $('#delete-mannequin').show()
+  // $('#update-mannequin').show()
+  // $('#delete-mannequin').show()
 }
 
 // create fail
@@ -43,8 +46,12 @@ const showSuccess = function (data) {
   const showModelsHtml = showModelsTemplate({ mannequins: data.mannequins })
   if (data.mannequins.length !== 0) {
     $('#mannequin-message').text('List of models!').show().hide(3000)
-  } else if (data.mannequins.length === 0) {
+    $('#update-mannequin').show()
+    $('#delete-mannequin').show()
+  } else {
     $('#mannequin-message').text('Create a model!').show().hide(3000)
+    $('#update-mannequin').hide()
+    $('#delete-mannequin').hide()
   }
   $('#show-models').append(showModelsHtml)
 }
@@ -58,6 +65,10 @@ const showFailure = function (error) {
 // update success
 const updateSuccess = function () {
   // console.log(data)
+  $('#show-models').empty()
+  mannAPI.showModels()
+    .then(showSuccess)
+    .catch(showFailure)
   $('#mannequin-message').text('Model Updated!').show().hide(3000)
   clearForms()
 }
@@ -71,7 +82,14 @@ const updateFailure = function (error) {
 
 // delete success
 const deleteSuccess = function () {
-  // console.log(data)
+debugger
+$('#show-models').empty()
+// const data = getFormFields(this)
+// event.preventDefault()
+// console.log('The data is', data)
+mannAPI.showModels()
+  .then(showSuccess)
+  .catch(showFailure)
   $('#mannequin-message').text('Model Deleted!').show().hide(3000)
   clearDelete()
 }
@@ -81,7 +99,6 @@ const deleteFailure = function () {
   // console.log(error)
   $('#mannequin-message').text('Model not deleted').show().hide(3000)
   clearDelete()
-  mannEvents.onClear()
 }
 
 module.exports = {

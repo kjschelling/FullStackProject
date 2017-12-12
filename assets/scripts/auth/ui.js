@@ -2,6 +2,7 @@
 
 const store = require('../store')
 const mannEvents = require('../mannequins/events.js')
+const showModelsTemplate = require('../templates/mannequin-listing.handlebars')
 // const mannUI = require('../mannequins/ui.js')
 
 // all messages need to start with .show() before .hide(3000)
@@ -73,7 +74,7 @@ const changePasswordFailure = function () {
 const signOutSuccess = function () {
   store.user = null
   $('#show-models').html('')
-  $('#auth-message').text('Signed out!').show().hide(3000)
+  $('#auth-message').text('Out!').show().hide(3000)
   $('.sign-up').show()
   $('.sign-in').show()
   $('.change-password').hide()

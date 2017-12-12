@@ -39,10 +39,6 @@ const onDelete = function (event) {
     .catch(mannUI.deleteFailure)
 }
 
-const onClear = function () {
-  $('#show-models').empty()
-}
-
 const addHandlers = function () {
   $('#create-mannequin').on('submit', onCreate)
   $('#show').on('click', onShow)
@@ -52,6 +48,5 @@ const addHandlers = function () {
 
 module.exports = {
   addHandlers,
-  onClear,
   onShow
 }
