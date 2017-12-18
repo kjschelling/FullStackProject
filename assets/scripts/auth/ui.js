@@ -42,7 +42,7 @@ const signInSuccess = function (data) {
   //   .then(mannUI.showSuccess)
   //   .catch(mannUI.showFailure)
   // console.log(store.user)
-  $('#auth-message').text('Signed in successfully!').show()
+  $('#mannequin-message').text('Signed in successfully!').show().hide(3000)
   $('.change-password').show()
   $('.sign-out').show()
   $('.sign-in').hide()
