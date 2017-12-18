@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Book a model</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+
+                           <!-- Auth Container -->
+
+     <div class="auth-container">
+       <div class="dropdown sign-up">
+         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           sign up
+         </button>
+         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           <form id="sign-up">
+             <fieldset>
+               <input type="email" id="sign-up-email" name="credentials[email]" placeholder="Email">
+               <input type="password" id="sign-up-password" name="credentials[password]" placeholder="Password">
+               <input type="password" id="sign-up-password-confirmation" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+               <button type="submit" class="btn btn-secondary">sign up</button>
+             </fieldset>
+             </form>
+         </div>
+       </div>
+
+       <div class="dropdown sign-in">
+         <button class="btn btn-secondary dropdown-toggle in-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           sign in
+         </button>
+         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           <form id="sign-in">
+             <fieldset>
+               <input type="email" id="sign-in-email" name="credentials[email]" placeholder="Email">
+               <input type="password" id="sign-in-password" name="credentials[password]" placeholder="Password">
+               <button type="submit" class="btn btn-secondary">sign in</button>
+             </fieldset>
+             </form>
+         </div>
+       </div>
+
+       <div class="dropdown change-password">
+         <button class="btn btn-secondary dropdown-toggle change-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           change password
+         </button>
+         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           <form id="change-password">
+             <fieldset>
+               <input type="password" id="old-password" name="passwords[old]" placeholder="Old">
+               <input type="password" id="new-password" name="passwords[new]" placeholder="New">
+               <button type="submit" class="btn btn-secondary">Change</button>
+             </fieldset>
+             </form>
+         </div>
+       </div>
+
+       <div class="dropdown sign-out">
+         <button class="btn btn-secondary dropdown-toggle out-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           sign out
+         </button>
+         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           <form id="sign-out">
+             <fieldset>
+               <button type="submit" class="btn btn-secondary">sign out</button>
+             </fieldset>
+             </form>
+         </div>
+       </div>
+       <p id='auth-message'></p>
+       <p id="mannequin-message"></p>
+ </div>
+
+  <div class="mannequins">
+    <p> Create New Model </p>
+    <p id='mannequin-message'></p>
+        <form id="create-mannequin">
+          <fieldset>
+            <input type="text" class="first" name="mannequin[given_name]" placeholder="First">
+            <input type="text" class="last" name="mannequin[surname]" placeholder="Last">
+            <input type="text" class="measurements" name="mannequin[measurements]" placeholder="Measurements">
+            <input type="text" class="eye" name="mannequin[eye_color]" placeholder="Eye Color">
+            <input type="text" class="hair" name="mannequin[hair_color]" placeholder="Hair Color">
+            <input type="text" class="length" name="mannequin[hair_length]" placeholder="Hair Length">
+            <input type="text" class="gender" name="mannequin[gender]" placeholder="Gender">
+            <input type="text" class="height" name="mannequin[height]" placeholder="Height">
+            <input type="text"  class="weight" name="mannequin[weight]" placeholder="Weight">
+            <button type="submit" class="btn btn-secondary">Create</button>
+          </fieldset>
+          </form>
+          <br>
+      <button type="submit" id="show" class="btn btn-secondary">Views your models</button>
+      <div id="show-models"></div>
+      <br>
+
+      <div>
+        <p> Update Model</p>
+      <form id="update-mannequin">
+        <fieldset>
+          <input type="text"  class="model-id" name="mannequin[id]" placeholder="ID">
+          <input type="text" class="first"  name="mannequin[given_name]" placeholder="First">
+          <input type="text" class="last" name="mannequin[surname]" placeholder="Last">
+          <input type="text" class="measurements" name="mannequin[measurements]" placeholder="Measurements">
+          <input type="text" class="eye" name="mannequin[eye_color]" placeholder="Eye Color">
+          <input type="text" class="hair" name="mannequin[hair_color]" placeholder="Hair Color">
+          <input type="text" class="length" name="mannequin[hair_length]" placeholder="Hair Length">
+          <input type="text" class="gender" name="mannequin[gender]" placeholder="Gender">
+          <input type="text" class="height" name="mannequin[height]" placeholder="Height">
+          <input type="text" class="weight" name="mannequin[weight]" placeholder="Weight">
+          <button type="submit" id="update-btn" class="btn btn-secondary">Update</button>
+        </fieldset>
+        </form>
+      <br>
+      <form id="delete-mannequin">
+        <fieldset>
+          <input type="text" id="delete-id"  name="mannequin[id]" placeholder="ID">
+          <button type="submit" class="btn btn-secondary">Delete</button>
+        </fieldset>
+      </form>
+      </div>
+  </div>
+
+    </body>
+</html>
