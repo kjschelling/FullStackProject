@@ -2,6 +2,8 @@
 #auth-message {
   color: $orange;
   display: inline-flex;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .btn-secondary {
@@ -22,12 +24,6 @@
 
 #create-mannequin, #delete-mannequin, #show, #update-mannequin, #clear, small {
   font-family: Courier;
-}
-
-#mannequin-message {
-  color: $orange;
-  font-size: 34px;
-  font-weight: bold;
 }
 
 p {
