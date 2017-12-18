@@ -33,15 +33,15 @@ const createSuccess = function () {
 }
 
 // create fail
-const createFailure = function (error) {
-  console.log(error)
+const createFailure = function () {
+  // console.log(error)
   $('#mannequin-message').text('Please fill all forms before submitting!').show().hide(8000)
   clearForms()
 }
 
 // show success
 const showSuccess = function (data) {
-  console.log('Within show success', data)
+  // console.log('Within show success', data)
   // this function
   const showModelsHtml = showModelsTemplate({ mannequins: data.mannequins })
   if (data.mannequins.length !== 0) {
