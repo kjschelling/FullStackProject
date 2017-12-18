@@ -26,7 +26,7 @@ const createSuccess = function () {
   mannAPI.showModels()
     .then(showSuccess)
     .catch(showFailure)
-  $('#auth-message').text('Model Created!').show()
+  $('#mannequin-message').text('Model Created!').show().hide(8000)
   clearForms()
   // $('#update-mannequin').show()
   // $('#delete-mannequin').show()
@@ -35,7 +35,7 @@ const createSuccess = function () {
 // create fail
 const createFailure = function (error) {
   console.log(error)
-  $('#auth-message').text('Please fill all forms before submitting!').show()
+  $('#mannequin-message').text('Please fill all forms before submitting!').show().hide(8000)
   clearForms()
 }
 
@@ -57,9 +57,9 @@ const showSuccess = function (data) {
 }
 
 // show fail
-const showFailure = function (error) {
-  console.log(error)
-  $('#auth-message').text('Error displaying models').show()
+const showFailure = function () {
+  // console.log(error)
+  $('#mannequin-message').text('Error displaying models').show().hide(8000)
 }
 
 // update success
@@ -69,14 +69,13 @@ const updateSuccess = function () {
   mannAPI.showModels()
     .then(showSuccess)
     .catch(showFailure)
-  $('#auth-message').text('Model Updated!').show()
+  $('#mannequin-message').text('Model Updated!').show().hide(8000)
   clearForms()
 }
 
 // update fail
-const updateFailure = function (error) {
-  console.log(error)
-  $('#auth-message').text('Please fill all forms before submitting!').show()
+const updateFailure = function () {
+  $('#mannequin-message').text('Please fill all forms before submitting!').show().hide(8000)
   clearForms()
 }
 
@@ -89,14 +88,14 @@ const deleteSuccess = function () {
   mannAPI.showModels()
     .then(showSuccess)
     .catch(showFailure)
-  $('#auth-message').text('Model Deleted!').show()
+  $('#mannequin-message').text('Model Deleted!').show().hide(8000)
   clearDelete()
 }
 
 //  delete fail
 const deleteFailure = function () {
   // console.log(error)
-  $('#auth-message').text('Model not deleted').show()
+  $('#mannequin-message').text('Model not deleted').show().hide(8000)
   clearDelete()
 }
 

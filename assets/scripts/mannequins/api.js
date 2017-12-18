@@ -3,7 +3,7 @@ const config = require('../config')
 const store = require('../store')
 
 const createModel = function (data) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/mannequins',
     method: 'POST',
