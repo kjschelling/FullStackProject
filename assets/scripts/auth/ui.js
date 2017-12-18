@@ -2,10 +2,9 @@
 
 const store = require('../store')
 const mannEvents = require('../mannequins/events.js')
-const showModelsTemplate = require('../templates/mannequin-listing.handlebars')
 // const mannUI = require('../mannequins/ui.js')
 
-// all messages need to start with .show() before .hide(3000)
+// all messages need to start with .show() before
 
 // clear forms function
 const clearUp = function () {
@@ -25,13 +24,13 @@ const clearPass = function () {
 // sign up  success
 const signUpSuccess = function () {
   // console.log(data)
-  $('#auth-message').text('Signed up successfully! Please sign in').show().hide(3000)
+  $('#auth-message').text('Signed up successfully! Please sign in').show()
   $('.sign-up').hide()
   clearUp()
 }
 // sign up fail
 const signUpFailure = function () {
-  $('#auth-message').text('Error on sign up').show().hide(3000)
+  $('#auth-message').text('Error on sign up').show()
   clearUp()
 }
 
@@ -43,7 +42,7 @@ const signInSuccess = function (data) {
   //   .then(mannUI.showSuccess)
   //   .catch(mannUI.showFailure)
   // console.log(store.user)
-  $('#auth-message').text('Signed in successfully!').show().hide(3000)
+  $('#auth-message').text('Signed in successfully!').show()
   $('.change-password').show()
   $('.sign-out').show()
   $('.sign-in').hide()
@@ -56,25 +55,25 @@ const signInSuccess = function (data) {
 
 // sign in fail
 const signInFailure = function () {
-  $('#auth-message').text('Error on sign in').show().hide(3000)
+  $('#auth-message').text('Error on sign in').show()
   clearIn()
 }
 
 // change password success
 const changePasswordSuccess = function () {
-  $('#auth-message').text('Change has been made!').show().hide(3000)
+  $('#auth-message').text('Change has been made!').show()
   clearPass()
 }
 // Change password fail
 const changePasswordFailure = function () {
-  $('#auth-message').text('Change not made').show().hide(3000)
+  $('#auth-message').text('Change not made').show()
   clearPass()
 }
 // sign out success
 const signOutSuccess = function () {
   store.user = null
   $('#show-models').html('')
-  $('#auth-message').text('Out!').show().hide(3000)
+  $('#auth-message').text('Out!').show()
   $('.sign-up').show()
   $('.sign-in').show()
   $('.change-password').hide()
@@ -84,7 +83,7 @@ const signOutSuccess = function () {
 
 // sign out fail
 const signOutFailure = function () {
-  $('#auth-message').text('Still here').show().hide(3000)
+  $('#auth-message').text('Still here').show()
 }
 
 module.exports = {
