@@ -73,7 +73,7 @@ const changePasswordFailure = function () {
 const signOutSuccess = function () {
   store.user = null
   $('#show-models').html('')
-  $('#auth-message').text('Out!').show()
+  $('#auth-message').text('Signed out, Please sign in!').show()
   $('.sign-up').show()
   $('.sign-in').show()
   $('.change-password').hide()
