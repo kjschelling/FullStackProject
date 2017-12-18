@@ -50,7 +50,7 @@ const showSuccess = function (data) {
     $('#delete-mannequin').show()
   } else {
     $('#auth-message').text('Create a model!').show()
-    $('#update-mannequin').hide()
+    $('.update-mannequin').hide()
     $('#delete-mannequin').hide()
   }
   $('#show-models').append(showModelsHtml)
